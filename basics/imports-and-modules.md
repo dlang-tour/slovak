@@ -1,4 +1,4 @@
-# Imports and modules
+# Moduly a importovanie
 
 For a simple hello world program in D, `import`s are needed.
 The `import` statement makes all public functions

@@ -1,48 +1,48 @@
-# Welcome to D
+# Vitajte vo svete jazyka D
 
-Welcome to the interactive tour of the *D Programming language*.
+Vitajte v interaktívnej prehliadke *programovacieho jazyka D*.
 
 {{#dmanmobile}}
 
-The tour gives an overview of this __powerful__ and __expressive__
-language which compiles directly to __efficient__, __native__ machine code.
+Táto prehliadka prináša prehľad __silného__ a __expresívneho__ jazyka D
+kompilovaného priamo do __efektívneho__ __natívneho__ strojového kódu.
 
 {{/dmanmobile}}
 
-### What is D?
+### Čo je jazyk D?
 
-D is the culmination of _decades of experience implementing compilers_
-for many diverse languages and has a unique set of features:
+Jazyk D ako zúročený výsledok _desaťročí skúseností získaných pri implementácii kompilátorov_
+pre mnoho rozličných jazykov má jedinečnú množinu vlastností:
 
 {{#dmandesktop}}
 
-- _high level_ constructs for great modeling power
-- _high performance_, compiled language
-- static typing
-- direct interface to the operating system API's and hardware
-- blazingly fast compile-times
-- memory-safe subset (SafeD)
-- _maintainable_, _easy to understand_ code
-- gradual learning curve (C-like syntax, similar to Java and others)
-- compatible with C application binary interface
-- limited compatibility with C++ application binary interface
-- multi-paradigm (imperative, structured, object oriented, generic, functional programming purity, and even assembly)
-- built-in error detection (contracts, unittests)
+- _vysokoúrovňové_ jazykové konštrukcie pre vynikajúce možnosti modelovania
+- _vysoký výkon_, kompilovaný jazyk
+- statické typovanie
+- priame napojenie na aplikačné programové rozhranie (API) operačného systému a priamy prístup k hardvéru
+- bleskovo rýchle časy kompilácie
+- vymedzenú množinu vlastností garantujúcu pamäťovú bezpečnosť (SafeD)
+- _spravovateľný_, _ľahko porozumiteľný_ zdrojový kód
+- postupnú krivku učenia (syntax skupiny jazykov C, podobná Jave a iným jazykom)
+- kompatibilitu s aplikačným binárnym rozhraním (ABI) jazyka C
+- ohraničenú kompatibilitu s aplikačným binárnym rozhraním (ABI) jazyka C++
+- viac-paradigmový prístup k programovaniu (imperatívne, štruktúrované, objektovo-orientované, generické, funkcionálne, i dokonca assembler)
+- zabudovanú detekciu chýb (kontrakty, unit testy)
 
-... and many more [features](http://dlang.org/overview.html).
+... a veľa ďalších [vlastností](http://dlang.org/overview.html).
 
 {{/dmandesktop}}
 
-### About the tour
+### O prehliadke
 
-Each section comes with a source code example that can be modified and used
-to experiment with D's language features.
-Click the run button (or `Ctrl-enter`) to compile and run it.
+Každá sekcia obsahuje príklad so zdrojovým kódom, ktorý je možné upravovať a používať
+na experimentovanie s možnosťami a vlastnosťami jazyka D.
+Pre kompiláciu a následné spustenie kódu stlačte tlačidlo 'Spustiť' (alebo klávesovú skratku `Ctrl-enter`).
 
-### Contributing
+### Prispievanie
 
-This tour is [open source](https://github.com/dlang-tour)
-and we welcome pull requests making this tour even better.
+Táto prehliadka má [otvorený zdrojový kód](https://github.com/dlang-tour)
+a vítame žiadosti o zapracovanie zmien (pull request), ktoré ju spravia ešte lepšou.
 
 ## {SourceCode}
 
@@ -53,19 +53,20 @@ import std.range;
 
 void main()
 {
-    // Let's get going!
-    writeln("Hello World!");
+    // Poďme na to!
+    writeln("Ahoj svet!");
 
-    // An example for experienced programmers:
-    // Take three arrays, and without allocating
-    // any new memory, sort across all the
-    // arrays inplace
+    // Príklad pre skúsených programátorov:
+    // Vezmite tri polia a bez alokovania
+    // ďalšej pamäte v nich preusporiadajte
+    // ich prvky
     int[] arr1 = [4, 9, 7];
     int[] arr2 = [5, 2, 1, 10];
     int[] arr3 = [6, 8, 3];
     sort(chain(arr1, arr2, arr3));
     writefln("%s\n%s\n%s\n", arr1, arr2, arr3);
-    // To learn more about this example, see the
-    // "Range algorithms" page under "Gems"
+    // Viac podrobností k tomuto príkladu
+    // nájdete na stránke "Rozsahové algoritmy"
+    // v sekcii "Klenoty"
 }
 ```
