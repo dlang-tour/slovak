@@ -1,26 +1,15 @@
 # Lokálna inštalácia D
 
-On the D language's website [dlang.org](https://dlang.org) the most recent
-compiler version of the reference compiler **DMD** (Digital Mars D)
-can be [downloaded](http://dlang.org/download.html) and installed:
-
-### Windows
-
-* [Installer](http://downloads.dlang.org/releases/2.x/{{latest-release}}/dmd-{{latest-release}}.exe)
-* or: [Archive](http://downloads.dlang.org/releases/2.x/{{latest-release}}/dmd.{{latest-release}}.windows.7z)
-* using [chocolatey](https://chocolatey.org/packages/dmd): `choco install dmd`
-
-### macOS
-
-* `.dmg` [package](http://downloads.dlang.org/releases/2.x/{{latest-release}}/dmd.{{latest-release}}.dmg)
-* or: [Archive](http://downloads.dlang.org/releases/2.x/{{latest-release}}/dmd.{{latest-release}}.osx.tar.xz)
-* using [Homebrew](http://brew.sh): `brew install dmd`
+Najnovšiu verziu referenčného kompilátora **DMD** (Digital Mars D)
+je možné [stiahnuť](http://dlang.org/download.html) a nainštalovať
+z oficiálnej stránky jazyka D [dlang.org](https://dlang.org):
 
 ### Linux / FreeBSD / macOS
 
-To quickly install dmd within your user directory, run: `curl -fsS https://dlang.org/install.sh | bash -s dmd`
+Pre rýchlu inštaláciu `dmd` do vášho domovského priečinka, spustite v termináli príkaz:
+`curl -fsS https://dlang.org/install.sh | bash -s dmd`
 
-Packages for various distributions are provided:
+Pre viaceré distribúcie sú k dispozícii priamo inštalačné balíky:
 
 * [ArchLinux](https://wiki.archlinux.org/index.php/D_(programming_language))
 * [Debian/Ubuntu](http://d-apt.sourceforge.net).
@@ -28,18 +17,30 @@ Packages for various distributions are provided:
 * [Gentoo](https://wiki.gentoo.org/wiki/Dlang)
 * [OpenSuse](http://dlang.org/download.html#dmd)
 
-### Other compilers
+### Windows
 
-Besides the DMD reference compiler which uses its own backend, there are
-two other compilers that can be fetched through the
-[dlang.org](https://dlang.org) download section:
+* [Inštalátor](http://downloads.dlang.org/releases/2.x/{{latest-release}}/dmd-{{latest-release}}.exe)
+* alebo [archív](http://downloads.dlang.org/releases/2.x/{{latest-release}}/dmd.{{latest-release}}.windows.7z)
+* alternatívne prostredníctvom [chocolatey](https://chocolatey.org/packages/dmd): `choco install dmd`
 
-* [**GDC**](http://gdcproject.org/downloads) which uses the GCC backend
-* [**LDC**](https://github.com/ldc-developers/ldc#installation) based on the LLVM backend
+### macOS
 
-GDC and LDC aren't always at the most recent DMD frontend's versions,
-but provide better optimization levels as well as support
-for other platforms like e.g. ARM.
+* `.dmg` [balík](http://downloads.dlang.org/releases/2.x/{{latest-release}}/dmd.{{latest-release}}.dmg)
+* alebo [archív](http://downloads.dlang.org/releases/2.x/{{latest-release}}/dmd.{{latest-release}}.osx.tar.xz)
+* prípadne pomocou [Homebrew](http://brew.sh): `brew install dmd`
 
-See the wiki for [more information](https://wiki.dlang.org/Compilers)
+### Alternatívne kompilátory
+
+Popri referenčnom kompilátore, ktorý používa svoj vlastný bekend,
+sú k dispozícii i ďalšie dva kompilátory, ktoré možno získať v sekcii Na stiahnutie na
+[dlang.org](https://dlang.org):
+
+* [**GDC**](http://gdcproject.org/downloads), ktorý využíva bekend GNU Compiler Collection
+* [**LDC**](https://github.com/ldc-developers/ldc#installation), ktorý je založený na bekende LLVM
+
+Oba kompilátory GDC a LDC obvykle zaostávajú za verziou frontendu referenčného kompilátora DMD,
+dosahujú však lepšie úrovne optimalizácie a rovnako tiež umožňujú podporu ďalších platforiem
+ako napríklad ARM.
+
+Viac informácií ku kompilátorom nájdete aj na [wiki jazyka D](https://wiki.dlang.org/Compilers)
 
