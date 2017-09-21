@@ -1,11 +1,10 @@
 # Konktraktové programovanie
 
-Contract programming in D includes a set of language constructs
-that allow increasing the code quality by implementing
-sanity checks that make sure that the code base
-behaves as intended. Contracts are only available in
-**debug** mode and won't be run in release mode.
-Therefore they shouldn't be used to validate user input.
+Contract programming in D includes a set of language constructs that allow increasing the code quality
+by implementing sanity checks that make sure that the code base behaves as intended.
+Contracts are compiled and executed when the software is build for testing or debugging.
+In release builds (enabled by the **-release** switch for DMD) they are completely omitted by the compiler,
+therefore they shouldn't be used to validate user input or as an alternative to using exceptions.
 
 ### `assert`
 
@@ -98,12 +97,12 @@ struct Date {
     /**
     Serializes Date object from a
     YYYY-MM-DD string.
-    
+
     Params:
         date = string to be serialized
-        
+
     Returns: Date object.
-    /*
+    */
     void fromString(string date)
     in {
         assert(date.length == 10);
@@ -123,7 +122,7 @@ struct Date {
     Serializes Date object to YYYY-MM-DD
 
     Returns: String representation of the Date
-    /*
+    */
     string toString() const
     out (result) {
         import std.algorithm : all, count,
