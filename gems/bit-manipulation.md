@@ -112,9 +112,9 @@ void main()
 
     struct BadVector
     {
-    	bool a;
-    	int x, y, z;
-    	bool b;
+        bool a;
+        int x, y, z;
+        bool b;
     }
     // due to padding,
     // 4 bytes are used for each field

@@ -67,8 +67,8 @@ interface Animal {
     NVI pattern. Uses makeNoise internally
     to customize behaviour inheriting
     classes.
-    
-    Params: 
+
+    Params:
         n =  number of repetitions
     */
     final void multipleNoise(int n) {
