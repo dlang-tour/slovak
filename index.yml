@@ -1,6 +1,9 @@
-title: Dlang Tour
+title: Prehliadka jazyka D
 start: welcome/welcome-to-d
 repo: dlang-tour/slovak
 ordering:
 - welcome
 - basics
+- gems
+- multithreading
+- vibed
