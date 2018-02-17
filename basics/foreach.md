@@ -23,7 +23,7 @@ name used in the loop iteration. Its type is induced automatically:
     }
 
 The second field must be an array - or a special iterable
-object called a **range** which will be introduced in the next section.
+object called a **range** which will be introduced in the [next section](basics/ranges).
 
 ### Access by reference
 
@@ -41,12 +41,12 @@ large types. To prevent copying or to enable *in-place
 D allows to write iterations which should be executed
 `n` times, more concisely with the `..` syntax:
 
-    foreach (i; 0..3) {
+    foreach (i; 0 .. 3) {
         writeln(i);
     }
     // 0 1 2
 
-The last number in `a..b` is excluded from the range,
+The last number in `a .. b` is excluded from the range,
 thus the loop body is executed `3` times.
 
 ### Iteration with index counter

@@ -5,7 +5,7 @@ Access to arrays of any kind is bounds-checked (except when the compiler can pro
 that bounds checks aren't necessary).
 A failed bounds check yields a `RangeError` which aborts the application.
 The brave can disable this safety feature with the
-compiler flag `-boundschecks=off`
+compiler flag `-boundscheck=off`
 in order to gain speed improvements at the cost of safety.
 
 #### Static arrays
@@ -29,9 +29,11 @@ and its length:
     int size = 8; // run-time variable
     int[] arr = new int[size];
 
-The type of `arr` is `int[]`, which is a **slice**. Slices
-will be explained in more detail in the next section. Multi-dimensional
-arrays can be created easily using the `auto arr = new int[3][3]` syntax.
+The type of `arr` is `int[]`, which is also called a **slice**. Slices
+are views on a contiguous block of memory and will be explained
+in more detail in the [next section](basics/slices).
+Multi-dimensional arrays can be created easily
+using the `auto arr = new int[3][3]` syntax.
 
 #### Array operations and properties
 
@@ -63,15 +65,18 @@ the last element and is a short form for `arr[arr.length - 1]`.
 
 ### Exercise
 
-Complete the function `encrypt` to decrypt the secret message.
+Complete the function `encrypt` to encrypt the secret message.
 The text should be encrypted using *Caesar encryption*,
 which shifts the characters in the alphabet using a certain index.
 The to-be-encrypted text only contains characters in the range `a-z`,
 which should make things easier.
 
+You can browse the solution [here](https://github.com/dlang-tour/core/issues/227).
+
 ### In-depth
 
 - [Arrays in _Programming in D_](http://ddili.org/ders/d.en/arrays.html)
+- [D Slices](https://dlang.org/d-array-article.html)
 - [Array specification](https://dlang.org/spec/arrays.html)
 
 ## {SourceCode:incomplete}
@@ -94,7 +99,7 @@ Returns:
 char[] encrypt(char[] input, char shift)
 {
     auto result = input.dup;
-    // ...
+    // TODO: shift each character
     return result;
 }
 

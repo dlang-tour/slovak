@@ -13,7 +13,8 @@ introduction: welcome UTF-8 `string`!
 
 Due to their immutablility, `string`s can be shared perfectly among
 different threads. As `string` is a slice, parts can be taken out of it without
-allocating memory. The standard function `std.algorithm.splitter`
+allocating memory. The standard function
+[`std.algorithm.splitter`](https://dlang.org/phobos/std_algorithm_iteration.html#.splitter)
 for example, splits a string by newline without any memory allocations.
 
 Besides the UTF-8 `string`, there are two more types:
@@ -70,21 +71,28 @@ in the [Unicode gems chapter](gems/unicode).
 
 ### Multi-line strings
 
-To create multi-line strings, use the `string str = q{ ... }` syntax.
+Strings in D can always span over multiple lines:
 
-    string multiline = q{ This
-        may be a
-        long document
-    };
+    string multiline = "
+    This
+    may be a
+    long document
+    ";
 
-### Raw strings
+When quotes appear in the document, Wysiwyg strings (see below) or
+[heredoc strings](http://dlang.org/spec/lex.html#delimited_strings) can be used.
+
+### Wysiwyg strings
 
 It is also possible to use raw strings to minimize laborious escaping
 of reserved symbols. Raw strings can be declared using either backticks (`` `
 ... ` ``) or the r(aw)-prefix (`r" ... "`).
 
     string raw  =  `raw "string"`; // raw "string"
-    string raw2 = r"raw "string""; // raw "string"
+    string raw2 = r"raw `string`"; // raw `string`
+
+D provides even more ways to represent strings - don't hesitate
+to [explore](https://dlang.org/spec/lex.html#string_literals) them.
 
 ### In-depth
 
@@ -93,6 +101,7 @@ of reserved symbols. Raw strings can be declared using either backticks (`` `
 - [Strings in _Programming in D_](http://ddili.org/ders/d.en/strings.html)
 - [std.utf](http://dlang.org/phobos/std_utf.html) - UTF en-/decoding algorithms
 - [std.uni](http://dlang.org/phobos/std_uni.html) - Unicode algorithms
+- [String Literals in the D spec](http://dlang.org/spec/lex.html#string_literals)
 
 ## {SourceCode}
 

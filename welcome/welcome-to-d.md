@@ -39,6 +39,10 @@ Každá sekcia obsahuje príklad so zdrojovým kódom, ktorý je možné upravov
 na experimentovanie s možnosťami a vlastnosťami jazyka D.
 Pre kompiláciu a následné spustenie kódu stlačte tlačidlo 'Spustiť' (alebo klávesovú skratku `Ctrl-enter`).
 
+Pohybovať sa touto prehliadkou môžete odkazmi "`<` predchádzajúce" and "nasledujúce `>`"
+v spodnej časti (alebo pomocou šípky vľavo a vpravo) alebo choďte priamo na vybranú kapitolu
+jej výberom z hornej ponuky.
+
 ### Prispievanie
 
 Táto prehliadka má [otvorený zdrojový kód](https://github.com/dlang-tour)
