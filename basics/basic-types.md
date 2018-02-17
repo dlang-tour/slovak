@@ -7,21 +7,21 @@ precision. There is no difference
 between the size of an integer regardless of whether the application
 is compiled for 32-bit or 64-bit systems.
 
-| type                          | size
+| typ                           | veľkosť
 |-------------------------------|------------
-|`bool`                         | 8-bit
-|`byte`, `ubyte`, `char`        | 8-bit
-|`short`, `ushort`, `wchar`     | 16-bit
-|`int`, `uint`, `dchar`         | 32-bit
-|`long`, `ulong`                | 64-bit
+|`bool`                         | 8 bitov
+|`byte`, `ubyte`, `char`        | 8 bitov
+|`short`, `ushort`, `wchar`     | 16 bitov
+|`int`, `uint`, `dchar`         | 32 bitov
+|`long`, `ulong`                | 64 bitov
 
-#### Floating point types:
+#### Typy s plávajúcou desatinnou čiarkou:
 
-| type    | size
+| typ     | veľkosť
 |---------|--------------------------------------------------
-|`float`  | 32-bit
-|`double` | 64-bit
-|`real`   | >= 64-bit (generally 64-bit, but 80-bit on Intel x86 32-bit)
+|`float`  | 32 bitov
+|`double` | 64 bitov
+|`real`   | >= 64 bitov (všeobecne 64 bitov, avšak 80 bitov na 32-bitovej architektúre Intel x86)
 
 The prefix `u` denotes *unsigned* types. `char` translates to
 UTF-8 characters, `wchar` is used in UTF-16 strings and `dchar`
@@ -42,7 +42,7 @@ will deduce the type `int` for `myVar`. Note that the type is still
 set at compile-time and can't be changed - just like with any other
 variable with an explicitly given type.
 
-### Type properties
+### Vlastnosti údajového typu
 
 All data types have a property `.init` to which they are initialized.
 For all integers this is `0` and for floating points it is `nan` (*not a number*).
@@ -58,34 +58,34 @@ Floating point types also have properties `.nan` (NaN-value), `.infinity`
 
 Every type also has a `.stringof` property which yields its name as a string.
 
-### Indexes in D
+### Indexy v jazyku D
 
 In D, indexes usually have the alias type `size_t`, as it is a type that
 is large enough to represent an offset into all addressable memory - this is
 `uint` for 32-bit and `ulong` for 64-bit architectures.
 
-### Assert expression
+### Výraz `assert`
 
 `assert` is an expression which verifies conditions in debug mode and aborts
 with an `AssertionError` if it fails.
 `assert(0)` is thus used to mark unreachable code.
 
-### In-depth
+### Podrobnejšie
 
-#### Basic references
+#### Základné odkazy
 
-- [Assignment](http://ddili.org/ders/d.en/assignment.html)
-- [Variables](http://ddili.org/ders/d.en/variables.html)
-- [Arithmetics](http://ddili.org/ders/d.en/arithmetic.html)
-- [Floating Point](http://ddili.org/ders/d.en/floating_point.html)
-- [Fundamental types in _Programming in D_](http://ddili.org/ders/d.en/types.html)
+- [Priradenie](http://ddili.org/ders/d.en/assignment.html)
+- [Premenné](http://ddili.org/ders/d.en/variables.html)
+- [Aritmetika](http://ddili.org/ders/d.en/arithmetic.html)
+- [Plávajúca čiarka](http://ddili.org/ders/d.en/floating_point.html)
+- [Základné typy vysvetlené v publikácii _Programming in D_](http://ddili.org/ders/d.en/types.html)
 
-#### Advanced references
+#### Pokročilé odkazy
 
-- [Overview of all basic data types in D](https://dlang.org/spec/type.html)
-- [`auto` and `typeof` in _Programming in D_](http://ddili.org/ders/d.en/auto_and_typeof.html)
-- [Type properties](https://dlang.org/spec/property.html)
-- [Assert expression](https://dlang.org/spec/expression.html#AssertExpression)
+- [Prehľad všetkých základných údajových typoch v jazyku D](https://dlang.org/spec/type.html)
+- [`auto` a `typeof` vysvetlené v publikácii _Programming in D_](http://ddili.org/ders/d.en/auto_and_typeof.html)
+- [Vlastnosti typov](https://dlang.org/spec/property.html)
+- [Výraz `assert`](https://dlang.org/spec/expression.html#AssertExpression)
 
 ## {SourceCode}
 
@@ -94,26 +94,29 @@ import std.stdio : writeln;
 
 void main()
 {
-    // Big numbers can be separated
-    // with an underscore "_"
-    // to enhance readability.
+    // V zápise veľkých čísiel možno
+    // pre zvýšenie čitateľnosti použiť
+    // ako oddeľovač podčiarkovník "_".
     int b = 7_000_000;
-    short c = cast(short) b; // cast needed
-    uint d = b; // fine
+    short c = cast(short) b; // pretypovanie
+                             // nevyhnutné
+    uint d = b; // v poriadku
     int g;
     assert(g == 0);
 
-    auto f = 3.1415f; // f denotes a float
+    auto f = 3.1415f; // f indukuje typ float
 
-    // typeid(VAR) returns the type information
-    // of an expression.
+    // Výraz typeid(VAR) vracia informáciu
+    // o type výrazu VAR.
     writeln("type of f is ", typeid(f));
-    double pi = f; // fine
-    // for floating-point types
-    // implicit down-casting is allowed
+    double pi = f; // v poriadku
+    // implicitné pretypovanie na typ s nižšou
+    // presnosťou je povolené pre údajové typy
+    // s plávajúcou desatinnou čiarkou
     float demoted = pi;
 
-    // access to type properties
+    // pristupovanie k vlastnostiam
+    // údajového typu
     assert(int.init == 0);
     assert(int.sizeof == 4);
     assert(bool.max == 1);

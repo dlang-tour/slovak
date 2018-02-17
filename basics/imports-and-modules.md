@@ -1,24 +1,21 @@
 # Moduly a importovanie
 
-For a simple hello world program in D, `import`s are needed.
-The `import` statement makes all public functions
-and types from the given **module** available.
+I v jednoduchom programe (typu 'Ahoj svet') je zväčša potrebné v jazyku D použiť `import` klauzulu.
+`import` klauzula sprístupní všetky verejné funkcie a deklarované typy z daného **modulu**.
 
-The standard library, called [Phobos](https://dlang.org/phobos/),
-is located under the **package** `std`
-and its modules are referenced through `import std.MODULE`.
+Štandardná knižnica, nazývaná [Phobos](https://dlang.org/phobos/),
+je umiestnená v **balíku** `std`, pričom jej jednotlivé moduly sa sprístupňujú cez konštrukciu `import std.MODUL`.
 
-The `import` statement can also be used to selectively
-import certain symbols of a module:
+Klauzulou `import` je možné tiež selektívne vymedziť rozsah sprístupnených symbolov:
 
     import std.stdio : writeln, writefln;
 
-Selective imports can be used to improve readability by making
-it obvious where a symbol comes from, and also as a way to
-prevent clashing of symbols with the same name from different modules.
+Selektívne importy možno využívať na zvýšenie čitateľnosti
+ozrejmením toho, odkiaľ symbol pochádza a taktiež ako prevenciu
+nejednoznačnosti symbolov s rovnakým názvom, ak sa nachádzajú v rozličných moduloch.
 
-An `import` statement does not need to appear at the top of a source file.
-It can also be used locally within functions or any other scope.
+`import` klauzuly netreba uvádzať na začiatku zdrojového súboru.
+Je možné ich použiť i lokálne vo funkciách alebo všeobecne v inom rozsahu platnosti.
 
 ## {SourceCode}
 
@@ -26,7 +23,8 @@ It can also be used locally within functions or any other scope.
 void main()
 {
     import std.stdio;
-    // or import std.stdio : writeln;
-    writeln("Hello World!");
+    // tiež možno použiť:
+    // import std.stdio : writeln;
+    writeln("Ahoj svet!");
 }
 ```

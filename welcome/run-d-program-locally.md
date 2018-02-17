@@ -20,8 +20,9 @@ zabezpečí kompiláciu všetkých závislostí a automaticky spustí výslednú
 
     rdmd ahoj.d
 
-Na systémoch typu UNIX je možné tzv. shebang riadok (prvý riadok skriptu definujúci jeho interpreter) v tvare `#!/usr/bin/env rdmd`
-vložiť ako prvý riadok spustiteľného D súboru, čo umožní jeho použitie ako v prípade spustiteľných skriptov.
+Na systémoch typu UNIX je možné vložiť ako prvý riadok spustiteľného D súboru tzv. *shebang* riadok
+(prvý riadok skriptu definujúci jeho interpreter) v tvare `#!/usr/bin/env rdmd`.
+To umožní priame použitie zdrojového súboru D jazyka ako spustiteľného skriptu.
 
 Preštudujte si [online dokumentáciu](https://dlang.org/rdmd.html) alebo použite príkaz `rdmd --help` pre zobrazenie prehľadu dostupných prepínačov.
 
