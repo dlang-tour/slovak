@@ -1,7 +1,7 @@
 Slovenský preklad Prehliadky jazyka D
 ==============================================
 
-[![Build Status](https://travis-ci.org/dlang-tour/slovak.svg?branch=master)](https://travis-ci.org/dlang-tour/slovak)
+[![sanitycheck build status](https://github.com/dlang-tour/slovak/actions/workflows/d.yml/badge.svg)](https://github.com/dlang-tour/slovak/actions/workflows/d.yml)
 
 Našli ste preklep alebo by ste radi vylepšili obsah?
 Kliknite na "edit" a zašlite nám požiadavku aktualizácie (pull request).
